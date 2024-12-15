@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import Modal from "./Modal";
 import { toast } from "react-toastify";
 function SignUp({ mode }) {
+  const navigate = useNavigate();
   const initialData = {
     username: "",
     email: "",
@@ -27,6 +28,7 @@ function SignUp({ mode }) {
     // setShowModal(true);
     if (Object.keys(errors).length === 0) {
       toast.success("Form submitted successfully!");
+      navigate("/login");
       localStorage.setItem("userData", JSON.stringify([formData]));
       setFormData(initialData);
     } else {
