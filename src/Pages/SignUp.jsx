@@ -28,7 +28,7 @@ function SignUp({ mode }) {
     // setShowModal(true);
     if (Object.keys(errors).length === 0) {
       toast.success("Form submitted successfully!");
-      navigate("/login");
+      navigate("/");
       localStorage.setItem("userData", JSON.stringify([formData]));
       setFormData(initialData);
     } else {
@@ -95,7 +95,7 @@ function SignUp({ mode }) {
         background: `${mode === "light" ? "#01101a" : "#131f29"}`,
       }}
     >
-      <h2>Sign In</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="user-name" className="form-label">
@@ -159,7 +159,7 @@ function SignUp({ mode }) {
         </div>
         <p className="d-block text-end text-secondary ">
           Already have an account?
-          <Link className="text-secondary" to="/login">
+          <Link className="text-secondary" to="/">
             Sign In
           </Link>
         </p>

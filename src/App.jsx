@@ -43,9 +43,9 @@ function App() {
       <Router>
         <Navbar toggleMode={toggleMode} mode={mode} />
         <Routes>
-          <Route path="/" element={<SignUp mode={mode} />} />
-          <Route path="/login" element={<Login mode={mode} />} />
-          <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/" element={<Login mode={mode} />} />
+          <Route path="/signin" element={<SignUp mode={mode} />} />
+          <Route path="/dashboard" element={<DashBoard mode={mode} />} />
         </Routes>
       </Router>
     </>

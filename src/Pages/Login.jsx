@@ -33,8 +33,8 @@ function Login({ mode }) {
     const errors = validateErrors(formValues);
     setErrorMessage(errors);
 
-    if (Object.keys(errors).length > 0) {
-      setShowModal(true);
+    if (Object.keys(errors).length > 0) { 
+      toast.error("Please fix the errors before submitting.");
       return;
     }
 
@@ -44,8 +44,6 @@ function Login({ mode }) {
     ) {
       toast.success("Login successful");
       navigate("/dashboard");
-    } else {
-      setShowModal(true);
     }
   };
   useEffect(() => {
@@ -78,7 +76,7 @@ function Login({ mode }) {
       }`}
       style={{ background: `${mode === "light" ? "#01101a" : "#131f29"}` }}
     >
-      <h2>Signin</h2>
+      <h2>Sign In</h2>
       <form onSubmit={handleSubmit}>
         <div className="my-3">
           <label htmlFor="email" className="form-label">
@@ -112,7 +110,7 @@ function Login({ mode }) {
         </div>
         <p className="text-end text-secondary">
           Create an account
-          <Link className="text-secondary" to="/">
+          <Link className="text-secondary" to="/signin">
             {" "}
             SignUp
           </Link>
